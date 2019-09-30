@@ -4,13 +4,12 @@ import sys
 args = sys.argv
 filename = args[1]
 
-if os.path.exists(f"{filename}buckets"):
+if os.path.exists(f"{filename}_buckets"):
 	print("already exist")
 	sys.exit()
 
-
-os.mkdir(f"{filename}buckets")
-os.chdir(f"{filename}buckets")
+os.mkdir(f"{filename}_buckets")
+os.chdir(f"{filename}_buckets")
 
 test0 = open("test0.gsp", "w")
 test1 = open("test1.gsp", "w")
@@ -150,4 +149,3 @@ with open(f"../{filename}.gsp", "r") as f:
 
 		if line == "\n":
 			i = (i+1) % 10
-

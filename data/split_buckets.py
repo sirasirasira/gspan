@@ -33,10 +33,12 @@ train7 = open("train7.gsp", "w")
 train8 = open("train8.gsp", "w")
 train9 = open("train9.gsp", "w")
 
+data_num = sum(1 for line in open(f"../{filename}.gsp") if line == "\n") / 10
+
 with open(f"../{filename}.gsp", "r") as f:
 	i = 0
 	for line in f:
-		if i == 0:
+		if 0 <= i < data_num*1:
 			test0.write(line)
 			train1.write(line)
 			train2.write(line)
@@ -47,7 +49,7 @@ with open(f"../{filename}.gsp", "r") as f:
 			train7.write(line)
 			train8.write(line)
 			train9.write(line)
-		if i == 1:
+		elif data_num*1 <= i < data_num*2:
 			train0.write(line)
 			test1.write(line)
 			train2.write(line)
@@ -58,7 +60,7 @@ with open(f"../{filename}.gsp", "r") as f:
 			train7.write(line)
 			train8.write(line)
 			train9.write(line)
-		if i == 2:
+		elif data_num*2 <= i < data_num*3:
 			train0.write(line)
 			train1.write(line)
 			test2.write(line)
@@ -69,7 +71,7 @@ with open(f"../{filename}.gsp", "r") as f:
 			train7.write(line)
 			train8.write(line)
 			train9.write(line)
-		if i == 3:
+		elif data_num*3 <= i < data_num*4:
 			train0.write(line)
 			train1.write(line)
 			train2.write(line)
@@ -80,7 +82,7 @@ with open(f"../{filename}.gsp", "r") as f:
 			train7.write(line)
 			train8.write(line)
 			train9.write(line)
-		if i == 4:
+		elif data_num*4 <= i < data_num*5:
 			train0.write(line)
 			train1.write(line)
 			train2.write(line)
@@ -91,7 +93,7 @@ with open(f"../{filename}.gsp", "r") as f:
 			train7.write(line)
 			train8.write(line)
 			train9.write(line)
-		if i == 5:
+		elif data_num*5 <= i < data_num*6:
 			train0.write(line)
 			train1.write(line)
 			train2.write(line)
@@ -102,7 +104,7 @@ with open(f"../{filename}.gsp", "r") as f:
 			train7.write(line)
 			train8.write(line)
 			train9.write(line)
-		if i == 6:
+		elif data_num*6 <= i < data_num*7:
 			train0.write(line)
 			train1.write(line)
 			train2.write(line)
@@ -113,7 +115,7 @@ with open(f"../{filename}.gsp", "r") as f:
 			train7.write(line)
 			train8.write(line)
 			train9.write(line)
-		if i == 7:
+		elif data_num*7 <= i < data_num*8:
 			train0.write(line)
 			train1.write(line)
 			train2.write(line)
@@ -124,7 +126,7 @@ with open(f"../{filename}.gsp", "r") as f:
 			test7.write(line)
 			train8.write(line)
 			train9.write(line)
-		if i == 8:
+		elif data_num*8 <= i < data_num*9:
 			train0.write(line)
 			train1.write(line)
 			train2.write(line)
@@ -135,7 +137,7 @@ with open(f"../{filename}.gsp", "r") as f:
 			train7.write(line)
 			test8.write(line)
 			train9.write(line)
-		if i == 9:
+		elif data_num*9 <= i < data_num*10:
 			train0.write(line)
 			train1.write(line)
 			train2.write(line)
@@ -148,4 +150,4 @@ with open(f"../{filename}.gsp", "r") as f:
 			test9.write(line)
 
 		if line == "\n":
-			i = (i+1) % 10
+			i += 1
